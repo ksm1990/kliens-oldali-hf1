@@ -98,18 +98,6 @@ useEffect(() => {
   setNetSalary(grossSalary * 0.665 + familyBenefitAmount + under25TaxBenefitValue + firstMarriageTaxBenefitValue);
 }, [grossSalary, counterA, counterB, isSwitchOn, under25TaxBenefit, personalTaxBenefit, isMarriageSwitchOn, calculateFamilyTaxBenefit]);
 
-
-  console.log("net salary: " + netSalary);
-  console.log("name: " + name);
-  console.log("first marriage: " + isMarriageSwitchOn);
-  console.log("under 25: " + under25TaxBenefit);
-  console.log("Counter A: " + counterA);
-  console.log("Counter B: " + counterB);
-  console.log("Family Tax Benefit: " + familyTaxBenefit);
-  console.log("Is switch on: " + isSwitchOn)
-  console.log("Family tax benefit: " + calculateFamilyTaxBenefit());
-  console.log("under25 tax benefit value: " + calculateUnder25TaxBenefitValue());
-
   return (
     <div className="text-xl bg-gray-400 w-45 rounded-xl p-5 m-1 border-black border-4">
       <h1 className="text-2xl font-bold m-2 p-2 flex items-center justify-center">
@@ -125,6 +113,9 @@ useEffect(() => {
         value={grossSalary}
         onChange={handleSalaryChange}
       />
+      <div className="content-center object-center">
+        <input className="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer dark:bg-gray-700" type="range" name="" id="" value={grossSalary} onChange={handleSalaryChange} min={1000} max={3000000}/>
+      </div>
       <div className="flex items-left flex-col justify-center">
         <Checkbox
           id="personalTaxBenefit"
